@@ -10,14 +10,38 @@ namespace car_garage_master
     {
         public string Brand { get; set; }
         public bool TrainingWheels { get; set; }
-        public enum bikeType
+        public BikeType BikeType { get; set; }
+
+        public Bicycle(string brand, bool trainingWheels, BikeType bikeType)
         {
-            road,
-            mountain,
-            hybrid,
-            electric,
-            bmx
+            Brand = brand;
+            TrainingWheels = trainingWheels;
+            BikeType = bikeType;
+            Speed = 0;
+            TopSpeed = 30; // perhaps make this based on bike type?
         }
-        public bikeType BikeType { get; set; }
+
+        public Bicycle(string brand)
+        {
+            Brand = brand;
+            TrainingWheels = false;
+            BikeType = BikeType.Road;
+            Speed = 0;
+            TopSpeed = 30; // perhaps make this based on bike type?
+        }
+        public override string Display()
+        {
+            return "Brand: " + Brand + " Current Speed: " + Speed;
+        }
+    }
+
+    // enumerables are special lists / categories you can define for properties. Each is equivalent to a numeric value
+    internal enum BikeType
+    {
+        Road,
+        Mountain,
+        Hybrid,
+        Electric,
+        BMX
     }
 }

@@ -20,35 +20,63 @@ namespace car_garage_master
         {
             Make = make;
             Model = model;
+            FuelLevel = 100;
             Speed = 0;
             TopSpeed = topSpeed;
-            FuelLevel = 100;
         }
 
         public Car(string make, string model)
         {
             Make = make;
             Model = model;
+            FuelLevel = 100;
             Speed = 0;
             TopSpeed = 100;
-            FuelLevel = 100;
         }
 
         public Car()
         {
-
+            Make = "Chrysler";
+            Model = "PT Cruiser";
+            FuelLevel= 100;
+            Speed = 0;
+            TopSpeed = 100;
         }
 
-
         //Accelerate
-
+        public override void Accelerate()
+        {
+            if (Speed <= TopSpeed - 5)
+            {
+                Speed += 5;
+            }
+        }
         //Brake
+        public override void Brake()
+        {
+            if (Speed >= 5)
+            {
+                Speed -= 5;
+            }
+        }
 
-        //Turn
+        public override string Display()
+        {
+            return "Make: " + Make + " Model: " + Model + " Current Speed: " + Speed + " Fuel: " + FuelLevel;
+        }
 
         //Add Tick method
-
-
+        public void Tick()
+        {
+            if(FuelLevel - (Speed / 10) > 0)
+            {
+               FuelLevel -= Speed / 10;
+            } 
+        }
+        public void Refuel()
+        {
+            FuelLevel = 100;
+        }
     }
 }
 
