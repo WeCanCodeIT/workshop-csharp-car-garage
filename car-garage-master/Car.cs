@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace car_garage_master
 {
-    internal class Car : Vehicle
+    public class Car : Vehicle
     {
         //let students pick properties to get them used to creating class. Let them know speed properties are in Vehicle class. In the end, make sure the care has at least the following properties:
         

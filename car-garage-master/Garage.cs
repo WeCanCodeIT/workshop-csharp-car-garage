@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace car_garage_master
 {
-    internal class Garage
+    public class Garage
     {
         public int Capacity;
         public List<Vehicle> Vehicles { get; set; }

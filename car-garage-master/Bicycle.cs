@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace car_garage_master
 {
-    internal class Bicycle : Vehicle
+    public class Bicycle : Vehicle
     {
         public string Brand { get; set; }
         public bool TrainingWheels { get; set; }
@@ -36,7 +36,7 @@ namespace car_garage_master
     }
 
     // enumerables are special lists / categories you can define for properties. Each is equivalent to a numeric value
-    internal enum BikeType
+    public enum BikeType
     {
         Road,
         Mountain,
